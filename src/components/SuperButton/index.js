@@ -16,7 +16,7 @@ const SuperButton = (props) => {
 const style = StyleSheet.create({
     button:{
         alignItems: 'center',
-        backgroundColor: '#00ffff',
+        backgroundColor: 'green',
         padding:12,
         width:320,
         borderRadius:4,

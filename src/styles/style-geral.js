@@ -9,7 +9,7 @@ const Container = styled.View`
 
 const MeuText = styled.Text`
     font-size: ${props => props.fontSize || 18};
-    color: ${props => props.cor || "#00ffff"}
+    color: ${props => props.cor || "green"}
 `;
 
 export {

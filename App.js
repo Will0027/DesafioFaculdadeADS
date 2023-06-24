@@ -1,98 +1,80 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/pages/Login/index.js';
-import Home from './src/pages/Home/index.js';
-import Settings from './src/pages/Settings/index.js';
-import Reports from './src/pages/Reports/index.js';
-
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Login from './src/pages/Login';
+import Home from './src/pages/Home';
+import Settings from './src/pages/Settings';
+import Reports from './src/pages/Reports';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const StackNavigate = () => {
-
   return (
-  <Stack.Navigator initialRouteName='Login'>
-
-    <Stack.Screen
-      name='Login'
-      component={Login}
-      options={{
-        title: ""
-      }}
-    />
-
-    <Stack.Screen
-      name='Home'
-      component={TabNavigate}
-      options={
-        {
-          title: "",
+    <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={TabNavigate}
+        options={{
           headerStyle: {
-            backgroundColor: "#00ffff"
-          }
-        }
-      }
-    />
-
-    <Stack.Screen
-      name='Settings'
-      component={Settings}
-      options={
-        {
-          title: "",
+            backgroundColor: 'green',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{
           headerStyle: {
-            backgroundColor: "#FF5722"
-          }
-        }
-      }
-    />
-
-    <Stack.Screen
-      name='Reports'
-      component={Reports}
-      options={
-        {
-          title: "",
+            backgroundColor: '#FF5722',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Reports"
+        component={Reports}
+        options={{
           headerStyle: {
-            backgroundColor: "#FF5722"
-          }
-        }
-      }
-    />
-
-  </Stack.Navigator>
+            backgroundColor: 'green',
+          },
+        }}
+      />
+    </Stack.Navigator>
   );
-}
+};
 
 const TabNavigate = () => {
   return (
     <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Settings" component={Settings} />
-        <Tab.Screen name="Reports" component={Reports} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Reports" component={Reports} />
     </Tab.Navigator>
-  )
-}
-
+  );
+};
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StackNavigate></StackNavigate>
-      {/* <TabNavigate></TabNavigate> */}
+      <StackNavigate />
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: '#fff',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
+  container: {
+    flex: 1,
+    backgroundColor: 'green',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

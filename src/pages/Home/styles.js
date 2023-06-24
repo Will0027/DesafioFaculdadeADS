@@ -13,11 +13,11 @@ const ItemProduto = styled.Text`
     padding: 10px;
     margin: 10px;
     font-size: 20px;
-    color: ${props => props.selecionado ? "white": "Black"}
+    color: ${props => props.selecionado ? "white": "white"}
 `;
 
 const TouchProduto = styled.TouchableOpacity`
-    background-color: ${props => props.selecionado ? "#00ffff": "#00ffff"};
+    background-color: ${props => props.selecionado ? "#00ffff": "green"};
     margin: 10px;
     text-align: center;
 `;
